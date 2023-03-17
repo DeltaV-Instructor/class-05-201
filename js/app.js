@@ -41,3 +41,47 @@ function lotteryNumberPicker(){
 let numbers = lotteryNumberPicker();
 
 console.log('!!!!!!!!',numbers);
+
+
+
+
+// function lotteryNumberPicker(){
+//   let lotteryArray = [];
+//   lotteryArray[0] = 10;
+//   for(let i = 0; i < 5; i++ ){
+//     lotteryArray[i] = Math.ceil( Math.random() * 99 );
+//   }
+//   return lotteryArray;
+// }
+
+
+
+
+let quantity = prompt('How many numbers would you like?');
+let lotteryMax = prompt('What is the max amount per number?');
+/**
+ * lottery number
+ * @param {string} quantity
+ * @param {string} lotteryMax
+ * @author its craig
+ * @returns good stuff. and an Array of lottery numbers
+ */
+function lotteryNumbers(quantity, lotteryMax){
+
+  let lotteryArray = [];
+
+  for(let i = 0; i < quantity; i++){
+    lotteryArray[i] = Math.ceil(Math.random() * lotteryMax);
+  }
+  return lotteryArray;
+
+}
+
+
+
+
+let results = lotteryNumbers(quantity, lotteryMax);
+
+
+alert(results);
+console.table(results);
